@@ -31,6 +31,11 @@ echo "-------------------------------Disk Usage >80%----------------------------
 df -Ph | sed s/%//g | awk '{ if($5 > 80) print $0;}'
 echo ""
 
+echo "-------------------------------Disk Usage------------------------------"
+df -h
+echo ""
+free -h
+echo ""
 echo "-------------------------------For WWN Details-------------------------------"
 vserver=$(lscpu | grep Hypervisor | wc -l)
 if [ $vserver -gt 0 ]; then
