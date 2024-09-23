@@ -172,11 +172,15 @@ windows
 iwr -useb https://raw.githubusercontent.com/kukuqi666/scripts/main/filebrowser/get.ps1 | iex
 ```
 
+参考说明[文档](filebrowser/README.md)
+
 ## docker安装
 
 ```
 bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/docker/install.sh)
 ```
+
+参考说明[文档](docker/README.md)
 
 ##caddy安装
 
