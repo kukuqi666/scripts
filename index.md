@@ -1,16 +1,16 @@
 ## 服务器连接方式
 
-1 可以通过powershell连接
+1·可以通过powershell连接
 
-[!](images/powershell.png)
+![!](images/powershell.png)
 
-2 可以通过finalshell连接
+2·可以通过finalshell连接
 
-[!](images/finalshell.png)
+![!](images/finalshell.png)
 
-3 可以通过vscode插件连接
+3·可以通过vscode插件连接
 
-[!](images/vscode.png)
+![!](images/vscode.png)
 
 
 powershell快捷连接方式
@@ -319,10 +319,10 @@ kill -9 26993
 
 ## 利用包管理工具安装好玩的工具
 
-[sl](images/sl.png)
+![sl](images/sl.png)
 
-[cmatrix](images/cmatrix.png)
+![cmatrix](images/cmatrix.png)
 
-[bastet](images/bastet)
+![bastet](images/bastet.png)
 
-[cowsay banner toilet figlet](images/cowsay)
+![cowsay banner toilet figlet](images/cowsay.png)
