@@ -1,204 +1,328 @@
-# Zsh 安装与配置，使用 Oh-My-Zsh 美化终端
+## 服务器连接方式
 
-传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。
+1 可以通过powershell连接
 
-&lt;!--more--&gt;
+[!](images/powershell.png)
 
-传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。
-## 环境配置
-### 安装基本工具
-```bash {title=&#34;安装基本工具&#34;}
-# 更新软件源
-sudo apt update &amp;&amp; sudo apt upgrade -y
-# 安装 zsh git curl
-sudo apt install zsh git curl -y
+2 可以通过finalshell连接
+
+[!](images/finalshell.png)
+
+3 可以通过vscode插件连接
+
+[!](images/vscode.png)
+
+
+powershell快捷连接方式
+
+```
+iwr -Uri "https://raw.githubusercontent.com/kukuqi666/scripts/main/ssh.ps1" -OutFile "C:\ssh.ps1" -UseB
+
 ```
 
-设置默认终端为 zsh（**注意：不要使用 sudo**）。
-```bash
-chsh -s /bin/zsh
+注意这将下载到C盘下面    请自行编辑里面的服务器用户名和ip保存后使用
+
+## 国内云服务器访问 GitHub
+
+1. 使用 GitHub 镜像站
+
+镜像站是 GitHub 的内容副本，可以通过以下镜像站加速访问：
+
+    GitHub 镜像站 ：
+        https://github.com.cnpmjs.org/
+        https://hub.fastgit.org/
+        https://github.wuyou.workers.dev/
+
+2. 修改 Hosts 文件
+
+通过手动修改 hosts 文件，直接解析 GitHub 域名到更快的 IP 地址。可以通过以下步骤操作：
+
+    打开 https://www.ipaddress.com/，输入 github.com，获取 GitHub 的最新 IP
+    编辑云服务器的 hosts 文件：
+
+    巴什 
+
+sudo vim /etc/hosts
+
+添加 GitHub 相关的 IP 地址：
+
+巴什 
+
+    140.82.114.4 github.com
+    185.199.108.153 assets-cdn.github.com
+    151.101.185.194 github.global.ssl.fastly.net
+
+    保存并退出，刷新 DNS 缓存。 
+
+
+3. 使用 CDN 加速
+
+一些第三方服务提供了 GitHub 文件的 CDN 加速，比如：
+
+    jsDelivr ：它可以用于 GitHub 资源的加速加载，尤其是前端
+
+    巴什 
+
+    https://cdn.jsdelivr.net/gh/{username}/{repository}@{version}/{path}
+
+    GitHub Releases 镜像加速 ：一些镜像网站可以加速 GitHub Release 文件的下载：
+        https://ghproxy.com/
+        https://gh.api.99988866.xyz/
+
+4. 使用 Git 工具的加速方法
+
+    可以使用 git clone 时通过 --depth 参数限制拉取的历史记录，减少数据量：
+
+    巴什 
+
+    git clone --depth=1 https://github.com/username/repo.git
+
+    如果只是为了查看代码，可以通过 GitHub 的 API 获取内容，避免克隆完整的历史记录。 
+
+
+
+## Zsh 安装与配置，使用 Oh-My-Zsh 美化终端
+
+完整版教程请打开[说明文档](images/docs.md)
+
+
+
+## 在终端显示系统logo和信息（neofetch和screenfetch）
+
+**安装方法**
+
+通过包管理工具
 ```
-### 安装 oh-my-zsh
-官网：[http://ohmyz.sh/](http://ohmyz.sh/)。
-安装方式任选一个即可。
+ubuntu：apt install neofetch screenfetch
 
-| Method | Command |
-| :--- | :--- |
-| **curl** | `sh -c &#34;$(curl -fsSL https://install.ohmyz.sh/)&#34;` |
-| **wget** | `sh -c &#34;$(wget -O- https://install.ohmyz.sh/)&#34;` |
-| **fetch** | `sh -c &#34;$(fetch -o - https://install.ohmyz.sh/)&#34;` |
-| 国内curl[镜像](https://gitee.com/pocmon/ohmyzsh) | `sh -c &#34;$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)&#34;` |
-| 国内wget[镜像](https://gitee.com/pocmon/ohmyzsh) | `sh -c &#34;$(wget -O- https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)&#34;` |
-
-注意：同意使用 Oh-my-zsh 的配置模板覆盖已有的 `.zshrc`。
-
-![安装 oh-my-zsh](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012224221.png)
-
-## 配置主题
-### 自定义主题
-```bash
-sudo wget -O $ZSH_CUSTOM/themes/haoomz.zsh-theme https://cdn.haoyep.com/gh/leegical/Blog_img/zsh/haoomz.zsh-theme
+centos: yum install neofetch screenfetch
 ```
+安装完以后再终端打对应命令就会出来
 
-编辑 `~/.zshrc` 文件，将 `ZSH_THEME` 设为 `haoomz`。当然你也可以设置为其他主题，例如`lukerandall`、`robbyrussell`。
-```bash
-nano ~/.zshrc
 
-ZSH_THEME=&#34;haoomz&#34;
 
+通过手动下载
+```
+wget https://raw.githubusercontent.com/kukuqi666/scripts/main/neofetch/neofetch
+
+wget https://raw.githubusercontent.com/kukuqi666/scripts/main/screenfetch/screenfetch
+
+mv neofetch screenfetch /usr/local/bin
+```
+安装完以后再终端打对应命令就会出来
+
+
+/usr/local/bin目录是用户放置自己可执行程序的地方，不会被系统升级而覆盖同名文件
+/usr/bin下面都是系统预装的可执行程序，会随着系统升级而改变
+
+
+在zsh终端启动时自动运行neofetch或screenfetch 下面以neofetch为例
+```
+vim ~/.zshrc
+```
+在末尾添加neofetch保存并退出
+```
 source ~/.zshrc
 ```
 
-![设置ZSH_THEME](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012235958.png)
+这样每次打开一个新的终端窗口或标签时neofetch会自动运行并显示系统信息
 
-效果如下（`robbyrussell` → `haoomz`）：
 
-![haoomz主题](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012238625.png)
 
-### 推荐主题
-你可以在[内置主题样式截图](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)中查看所有 zsh 内置的主题样式和对应的主题名。这些内置主题已经放在 ～/.oh-my-zsh/themes 目录下，不需要再下载。
-```bash
-cd ~/.oh-my-zsh/themes &amp;&amp; ls
+
+## 安装自己编写的可执行程序脚本
+
+
+```
+wget https://raw.githubusercontent.com/kukuqi666/scripts/main/system/systeminfo
+
+wget https://raw.githubusercontent.com/kukuqi666/scripts/main/system/Top
+
+ubuntu安装：
+
+wget https://raw.githubusercontent.com/kukuqi666/scripts/main/system/Ufw
+
+centos安装：
+
+wget https://raw.githubusercontent.com/kukuqi666/scripts/main/system/Firewalld
+
+
+
+mv systeminfo Top Ufw Firewalld /usr/local/bin
 ```
 
-![zsh 内置的主题样式](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012242407.png)
+最后就可以通过命令行直接运行这4个脚本了
 
-#### powerlevel10k
-根据 [What&#39;s the best theme for Oh My Zsh?](https://www.slant.co/topics/7553/~theme-for-oh-my-zsh) 中的排名，以及自定义化、美观程度，强烈建议使用 [powerlevel10k](https://github.com/romkatv/powerlevel10k) 主题。
 
-```bash
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-# 中国用户可以使用 gitee.com 上的官方镜像加速下载
-git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+
+## filebrowser安装
+
 ```
-在 `~/.zshrc` 设置 `ZSH_THEME=&#34;powerlevel10k/powerlevel10k&#34;`。接下来，终端会自动引导你配置 `powerlevel10k`。
+linux
 
-## 安装插件
-`oh-my-zsh` 已经内置了 `git` 插件，内置插件可以在 `～/.oh-my-zsh/plugins` 中查看，下面介绍一下我常用的插件，更多插件可以在 [awesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins) 里查看。
-### 插件推荐
-#### zsh -autosuggestions
-[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) 是一个命令提示插件，当你输入命令时，会自动推测你可能需要输入的命令，按下右键可以快速采用建议。效果如下：
+bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/filebrowser/install.sh)
 
-![zsh-autosuggestions自动补全](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012250028.png)
+curl -fsSL https://raw.githubusercontent.com/kukuqi666/scripts/main/filebrowser/get.sh | bash
 
-安装方式：把插件下载到本地的 `~/.oh-my-zsh/custom/plugins` 目录。
-```bash
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-```
-#### zsh-syntax-highlighting
-[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) 是一个命令语法校验插件，在输入命令的过程中，若指令不合法，则指令显示为红色，若指令合法就会显示为绿色。效果如下：
 
-![命令语法校验](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012252786.png)
+windows
 
-安装方式：把插件下载到本地的 `~/.oh-my-zsh/custom/plugins` 目录。
-```bash
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting 
-```
-#### z
-`oh-my-zsh` 内置了 `z` 插件。`z` 是一个文件夹快捷跳转插件，对于曾经跳转过的目录，只需要输入最终目标文件夹名称，就可以快速跳转，避免再输入长串路径，提高切换文件夹的效率。效果如下：
-
-![使用z跳转目录](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012254065.png)
-#### extract
-`oh-my-zsh` 内置了 `extract` 插件。`extract` 用于解压任何压缩文件，不必根据压缩文件的后缀名来记忆压缩软件。使用 `x` 命令即可解压文件，效果如下：
-
-![extract 解压](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012259966.png)
-
-#### web-search
-oh-my-zsh 内置了 `web-search` 插件。`web-search` 能让我们在命令行中使用搜索引擎进行搜索。使用`搜索引擎关键字&#43;搜索内容` 即可自动打开浏览器进行搜索。效果如下：
-
-![web-search搜索](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012302476.png)
-
-&gt; [!IMPORTANT]
-&gt; 最后，记得[启用所有插件](#启用插件)。
-
-### 启用插件
-修改`~/.zshrc`中插件列表为：
-```bash
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search)
+iwr -useb https://raw.githubusercontent.com/kukuqi666/scripts/main/filebrowser/get.ps1 | iex
 ```
 
-![zsh插件列表](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png)
+## docker安装
 
-&gt; [!TIP]
-&gt; 部分插件需要参考[插件介绍](#插件介绍)进行安装。
-
-开启新的 Shell 或执行 `source ~/.zshrc`，就可以开始体验插件。
-## Tips
-### root 用户
-当你配置好登陆用户的 zsh 后，如果使用`sudo su`命令进入`root`用户的终端，发现还是默认的`bash`。建议在`root`用户的终端下，也安装`on my zsh`，设置与普通用户不同的主题以便区分，插件可以使用一样的。
-`root`用户的`~/.zshrc`配置，仅供参考：
-```bash
-ZSH_THEME=&#34;ys&#34;
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search)
-# 或
-plugins=(git colored-man-pages colorize cp man command-not-found sudo suse ubuntu archlinux zsh-navigation-tools z extract history-substring-search python zsh-autosuggestions zsh-syntax-highlighting)
 ```
-### 配置本地代理
-如果你配置了本地代理，并希望终端的 git 等命令使用代理，那么可以在`~/.zshrc`中添加：
-```bash
-# 为 curl wget git 等设置代理
-proxy () {
-  export ALL_PROXY=&#34;socks5://127.0.0.1:1089&#34;
-  export all_proxy=&#34;socks5://127.0.0.1:1089&#34;
-}
-
-# 取消代理
-unproxy () {
-  unset ALL_PROXY
-  unset all_proxy
-}
-```
-&gt; [!TIP]
-&gt; 这里假设本地代理的端口是`1089`。
-
-![使用本地代理命令](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012307093.png)
-
-以后在使用 `git` 等命令之前，只需要在终端中输入 `proxy` 命令，即可使用本地代理。
-
-#### WSL 配置本地代理
-```zsh
-host_ip=$(cat /etc/resolv.conf |grep &#34;nameserver&#34; |cut -f 2 -d &#34; &#34;)
-# 为 curl wget git npm apt 等设置代理
-proxy () {
-  export ALL_PROXY=&#34;http://$host_ip:10811&#34;
-  export all_proxy=&#34;http://$host_ip:10811&#34;
- # echo -e &#34;Acquire::http::Proxy \&#34;http://$host_ip:10811\&#34;;&#34; | sudo tee -a /etc/apt/apt.conf &gt; /dev/null
- # echo -e &#34;Acquire::https::Proxy \&#34;http://$host_ip:10811\&#34;;&#34; | sudo tee -a /etc/apt/apt.conf &gt; /dev/null
-}
-
-# 取消代理
-unproxy () {
-  unset ALL_PROXY
-  unset all_proxy
- # sudo sed -i -e &#39;/Acquire::http::Proxy/d&#39; /etc/apt/apt.conf
- # sudo sed -i -e &#39;/Acquire::https::Proxy/d&#39; /etc/apt/apt.conf
-}
-```
-&gt; [!NOTE]
-&gt; 这里假设宿主机局域网 http 代理的端口是`10811`。
-
-### 卸载 Oh My Zsh
-- 终端输入 ：
-```bash
-uninstall_oh_my_zsh
-Are you sure you want to remove Oh My Zsh? [y/N]  Y
+bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/docker/install.sh)
 ```
 
-- 终端提示信息：
-```bash
-Removing ~/.oh-my-zsh
-Looking for original zsh config...
-Found ~/.zshrc.pre-oh-my-zsh -- Restoring to ~/.zshrc
-Found ~/.zshrc -- Renaming to ~/.zshrc.omz-uninstalled-20170820200007
-Your original zsh config was restored. Please restart your session.
-Thanks for trying out Oh My Zsh. It&#39;s been uninstalled.
+##caddy安装
+
+```
+bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/caddy/install.sh)
 ```
 
-### 手动更新 Oh My Zsh
-- **Oh My Zsh** 的自动更新提示误触关掉了解决办法
-- 打开终端输入：
-```bash
-upgrade_oh_my_zsh
+
+## trojan-go安装
+
+```
+bash <(curl -sSL "https://raw.githubusercontent.com/kukuqi666/scripts/main/hj/trojan-go.sh")
 ```
 
+## x-ui服务器管理面板安装
+
+```
+bash <(curl -Ls https://raw.githubusercontent.com/kukuqi666/scripts/main/x-ui/install.sh)
+```
+
+## xray安装
+
+```
+bash <(wget -qO- -o- https://raw.githubusercontent.com/kukuqi666/scripts/main/Xray-233boy/install.sh)
+```
+
+
+## v2ray安装
+
+```
+bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/v2ray-233boy/install.sh)
+
+bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/v2ray-xyz690/install.sh)
+
+bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/fhs-install-v2ray/install.sh)
+```
+
+
+## sing-box
+
+```
+bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/sing-box/install.sh)
+```
+
+
+
+
+
+## LNMP网站搭建一键安装脚本
+
+```
+wget http://soft.vpser.net/lnmp/lnmp2.1.tar.gz -cO lnmp2.1.tar.gz && tar zxf lnmp2.1.tar.gz && cd lnmp2.1 && ./install.sh lnmp
+```
+
+
+## screen使用方法
+
+**install:**
+
+ubuntu:apt install screen     centos: yum install screen
+
+
+
+Attached：表示当前screen正在作为主终端使用，为活跃状态。
+
+Detached：表示当前screen正在后台使用，为非激发状态。
+
+通常情况下，不需要关注上面的状态。
+
+
+screen -ls
+
+即可查看已经创建（在后台运行的终端）
+
+
+
+使用-R创建filebrowser
+
+screen -R filebrowser
+
+
+这个时候，我们按Ctril+a，再按d，即可保持这个screen到后台并回到主终端
+
+
+使用screen -r命令
+
+screen -r [pid/name]
+
+其中：
+
+pid/name：为虚拟终端PID或Name
+
+其中：32307为PID，filebrowser为Name。
+
+回到这个虚拟终端的命令即为：
+
+screen -r 32307
+
+或(在没有重名虚拟终端情况下）
+
+screen -r filebrowser
+
+另外一个-R和-r一样，但是没有对应名称的PID或者Name时，会自动创建新的虚拟终端。
+
+退出终端
+
+exit
+
+之后，就会回到主终端。
+
+
+当然，你如果对screen运行程序，确定已经停止运行了，也可以在主终端内，使用命令释放：
+使用-R/-r/-S均可
+screen -R [pid/Name] -X quit
+
+
+## 使用nohup在后台运行
+
+使用nohup命令在后台运行程序，即使断开ssh连接也能保持运行：
+
+touch nohup.out                                   # 首次运行需要新建日志文件  
+nohup python3 app.py & tail -f nohup.out          # 在后台运行程序并通过日志输出二维码
+
+扫码登录后程序即可运行于服务器后台，此时可通过 ctrl+c 关闭日志，不会影响后台程序的运行。在日志关闭后如果想要再次打开只需输入 tail -f nohup.out。
+
+停止程序
+如果想要关闭程序可以 执行 kill -9 <pid>来完成，执行以下命令可以查看当前进程的 pid：
+
+ps -ef | grep app.py | grep -v grep
+
+
+kill
+在查到端口占用的进程后，如果你要杀掉对应的进程可以使用 kill 命令：
+
+kill -9 PID
+如上实例，我们看到 8000 端口对应的 PID 为 26993，使用以下命令杀死进程：
+
+kill -9 26993
+
+
+## 利用包管理工具安装好玩的工具
+
+[sl](images/sl.png)
+
+[cmatrix](images/cmatrix.png)
+
+[bastet](images/bastet)
+
+[cowsay banner toilet figlet](images/cowsay)
