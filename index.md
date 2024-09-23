@@ -83,7 +83,7 @@ sudo vim /etc/hosts
 
 ## Zsh 安装与配置，使用 Oh-My-Zsh 美化终端
 
-完整版教程请打开[说明文档](images/docs.md)
+完整版教程请打开[说明文档](docs.md)
 
 
 
