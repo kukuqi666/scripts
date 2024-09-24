@@ -158,16 +158,15 @@ mv systeminfo Top Ufw Firewalld /usr/local/bin
 
 ## filebrowser安装
 
+**linux安装**
 ```
-linux
-
 bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/filebrowser/install.sh)
 
 curl -fsSL https://raw.githubusercontent.com/kukuqi666/scripts/main/filebrowser/get.sh | bash
+```
 
-
-windows
-
+**windows安装**
+```
 iwr -useb https://raw.githubusercontent.com/kukuqi666/scripts/main/filebrowser/get.ps1 | iex
 ```
 
@@ -181,7 +180,7 @@ bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/docke
 
 参考说明[文档](docker/README.md)
 
-##caddy安装
+## caddy安装
 
 ```
 bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/caddy/install.sh)
