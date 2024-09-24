@@ -103,11 +103,12 @@ centos: yum install neofetch screenfetch
 
 通过手动下载
 ```
-wget https://raw.githubusercontent.com/kukuqi666/scripts/main/neofetch/neofetch
+wget -o /usr/local/bin https://raw.githubusercontent.com/kukuqi666/scripts/main/neofetch/neofetch
 
-wget https://raw.githubusercontent.com/kukuqi666/scripts/main/screenfetch/screenfetch
+wget -o /usr/local/bin https://raw.githubusercontent.com/kukuqi666/scripts/main/screenfetch/screenfetch
 
-mv neofetch screenfetch /usr/local/bin
+chmod +x /usr/local/bin/neofetch && chmod +x /usr/local/bin/screenfetch
+
 ```
 安装完以后再终端打对应命令就会出来
 
@@ -152,8 +153,6 @@ mv systeminfo Top Ufw Firewalld /usr/local/bin
 ```
 
 最后就可以通过命令行直接运行这4个脚本了
-
-
 
 
 
