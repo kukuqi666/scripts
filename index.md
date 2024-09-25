@@ -39,19 +39,17 @@ iwr -Uri "https://raw.githubusercontent.com/kukuqi666/scripts/main/ssh.ps1" -Out
 
     打开 https://www.ipaddress.com/，输入 github.com，获取 GitHub 的最新 IP
     编辑云服务器的 hosts 文件：
-
-    巴什 
-
+```
 sudo vim /etc/hosts
+```
 
 添加 GitHub 相关的 IP 地址：
 
-巴什 
-
+```
     140.82.114.4 github.com
     185.199.108.153 assets-cdn.github.com
     151.101.185.194 github.global.ssl.fastly.net
-
+```
     保存并退出，刷新 DNS 缓存。 
 
 
@@ -61,21 +59,22 @@ sudo vim /etc/hosts
 
     jsDelivr ：它可以用于 GitHub 资源的加速加载，尤其是前端
 
-    巴什 
+```
 
     https://cdn.jsdelivr.net/gh/{username}/{repository}@{version}/{path}
 
     GitHub Releases 镜像加速 ：一些镜像网站可以加速 GitHub Release 文件的下载：
         https://ghproxy.com/
         https://gh.api.99988866.xyz/
+```
 
 4. 使用 Git 工具的加速方法
 
     可以使用 git clone 时通过 --depth 参数限制拉取的历史记录，减少数据量：
 
-    巴什 
-
+```
     git clone --depth=1 https://github.com/username/repo.git
+```
 
     如果只是为了查看代码，可以通过 GitHub 的 API 获取内容，避免克隆完整的历史记录。 
 
@@ -189,7 +188,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/2.29.7/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 docker-compose --version
- ```
+```
 
 ## caddy安装
 
