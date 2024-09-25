@@ -180,6 +180,17 @@ bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/docke
 
 参考说明[文档](docker/README.md)
 
+
+
+## docker compose安装
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/2.29.7/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+docker-compose --version
+ ```
+
 ## caddy安装
 
 ```
