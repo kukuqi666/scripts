@@ -258,8 +258,9 @@ Detached：表示当前screen正在后台使用，为非激发状态。
 
 通常情况下，不需要关注上面的状态。
 
-
+```
 screen -ls
+```
 
 即可查看已经创建（在后台运行的终端）
 
@@ -267,9 +268,10 @@ screen -ls
 
 使用-R创建filebrowser
 
+```
 screen -R filebrowser
 
-
+```
 这个时候，我们按Ctril+a，再按d，即可保持这个screen到后台并回到主终端
 
 
@@ -285,11 +287,13 @@ pid/name：为虚拟终端PID或Name
 
 回到这个虚拟终端的命令即为：
 
+```
 screen -r 32307
-
+```
 或(在没有重名虚拟终端情况下）
-
+```
 screen -r filebrowser
+```
 
 另外一个-R和-r一样，但是没有对应名称的PID或者Name时，会自动创建新的虚拟终端。
 
@@ -309,16 +313,18 @@ screen -R [pid/Name] -X quit
 
 使用nohup命令在后台运行程序，即使断开ssh连接也能保持运行：
 
+```
 touch nohup.out                                   # 首次运行需要新建日志文件  
 nohup python3 app.py & tail -f nohup.out          # 在后台运行程序并通过日志输出二维码
-
+```
 扫码登录后程序即可运行于服务器后台，此时可通过 ctrl+c 关闭日志，不会影响后台程序的运行。在日志关闭后如果想要再次打开只需输入 tail -f nohup.out。
 
 停止程序
 如果想要关闭程序可以 执行 kill -9 <pid>来完成，执行以下命令可以查看当前进程的 pid：
 
+```
 ps -ef | grep app.py | grep -v grep
-
+```
 
 kill
 在查到端口占用的进程后，如果你要杀掉对应的进程可以使用 kill 命令：
@@ -326,9 +332,10 @@ kill
 kill -9 PID
 如上实例，我们看到 8000 端口对应的 PID 为 26993，使用以下命令杀死进程：
 
+```
 kill -9 26993
 
-
+```
 ## 利用包管理工具安装好玩的工具
 
 ![sl](images/sl.png)
