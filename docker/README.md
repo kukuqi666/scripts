@@ -88,16 +88,43 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
+
 阿里云镜像获取地址：https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors
 
 
 
+配置使用(Beta)
+镜像地址
+
+```
+https://docker.1ms.run
+```
+
+修改 /etc/docker/daemon.json
+
+```
+{"registry-mirrors": ["https://docker.1ms.run"]}
+```
+
+重启服务
+
+```
+systemctl daemon-reload
+systemctl restart docker
+```
+
+
+
+
+
 国内好用的加速地址
+
+```
 https://docker.1panel.live
 https://docker.hpcloud.cloud
 https://dockerpull.com
 https://dockerproxy.cn
-
+```
 
 
 为了加快镜像的下载速度，我们可以将 Docker Hub 的镜像源修改为国内的镜像源。终端编辑此文件：
