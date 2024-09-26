@@ -50,6 +50,7 @@ sudo vim /etc/hosts
     185.199.108.153 assets-cdn.github.com
     151.101.185.194 github.global.ssl.fastly.net
 ```
+
     保存并退出，刷新 DNS 缓存。 
 
 
@@ -102,9 +103,9 @@ centos: yum install neofetch screenfetch
 
 通过手动下载
 ```
-wget -o /usr/local/bin https://raw.githubusercontent.com/kukuqi666/scripts/main/neofetch/neofetch
+wget -o /usr/local/bin/neofetch https://raw.githubusercontent.com/kukuqi666/scripts/main/neofetch/neofetch
 
-wget -o /usr/local/bin https://raw.githubusercontent.com/kukuqi666/scripts/main/screenfetch/screenfetch
+wget -o /usr/local/bin/screenfetch https://raw.githubusercontent.com/kukuqi666/scripts/main/screenfetch/screenfetch
 
 chmod +x /usr/local/bin/neofetch && chmod +x /usr/local/bin/screenfetch
 
