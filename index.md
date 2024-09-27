@@ -237,7 +237,7 @@ bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/sing-
 ## yarn安装
 
 ```
-curl -o- https://raw.githubusercontent.com/kukuqi666/scripts/yarn/install.sh | bash
+curl -o- https://raw.githubusercontent.com/kukuqi666/scripts/main/yarn/install.sh | bash
 ```
 
 
