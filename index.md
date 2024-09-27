@@ -234,7 +234,11 @@ bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/fhs-i
 bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/sing-box/install.sh)
 ```
 
+## yarn安装
 
+```
+curl -o- https://raw.githubusercontent.com/kukuqi666/scripts/yarn/install.sh | bash
+```
 
 
 
