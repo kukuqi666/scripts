@@ -234,6 +234,18 @@ bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/fhs-i
 bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/sing-box/install.sh)
 ```
 
+## nvm安装
+
+```sh
+curl -o- https://raw.githubusercontent.com/kukuqi666/scripts/main/nvm/install.sh | bash
+```
+
+```sh
+wget -qO- https://raw.githubusercontent.com/kukuqi666/scripts/main/nvm/install.sh | bash
+```
+
+
+
 ## yarn安装
 
 ```
