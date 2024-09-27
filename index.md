@@ -252,7 +252,21 @@ wget -qO- https://raw.githubusercontent.com/kukuqi666/scripts/main/nvm/install.s
 curl -o- https://raw.githubusercontent.com/kukuqi666/scripts/main/yarn/install.sh | bash
 ```
 
+## openvpn安装
 
+```
+wget -O openvpn-install.sh https://raw.githubusercontent.com/kukuqi666/scripts/main/openvpn/install.sh
+```
+
+赋予执行权限
+
+```
+chmod +x openvpn-install.sh
+```
+
+```
+./openvpn-install
+```
 
 ## LNMP网站搭建一键安装脚本
 
