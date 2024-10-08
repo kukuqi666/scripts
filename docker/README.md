@@ -427,3 +427,146 @@ echo "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_re
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
+
+
+
+
+
+
+# 在使用 docker-compose up --build 时，Docker 会缓存之前的构建步骤，以加快构建速度。如果你想在构建过程中清除缓存
+
+
+## 方法1：使用 --no-cache 选项 在运行 docker-compose up --build 时，添加 --no-cache 选项，Docker 将忽略所有缓存并重新构建镜像：
+
+```
+docker-compose up --build --no-cache
+```
+
+这将确保所有步骤从头开始重新构建，不会使用任何之前的缓存。
+
+
+## 方法2：删除 Docker 构建缓存 你也可以手动清理 Docker 的构建缓存。可以使用以下命令来
+ 
+```
+docker builder prune
+```
+
+该命令会删除所有未使用的构建缓存。你会被提示确认是否继续清理，输入 y 确认。如果你想自动跳过确认提示，可以加上 -f 选项：
+
+```
+docker builder prune -f
+```
+
+## 方法3：清理具体的镜像和容器 如果你想手动删除已经构建的镜像和容器，也可以执行以下操作：
+
+列出所有镜像 ：
+
+```
+docker images
+```
+
+删除某个镜像 （用 <image_id> 替换实际的镜像 ID）：
+
+```
+docker rmi <image_id>
+```
+
+删除所有未使用的镜像和容器 ：
+
+
+```
+docker system prune -a
+```
+
+这个命令不仅会删除未使用的镜像，还会删除停止的容器、未使用的网络等。 
+
+## 总结
+
+使用 --no-cache 选项强制重新构建：
+
+```
+docker-compose up --build --no-cache
+```
+
+使用 docker builder prune 清理构建缓存：
+
+```
+docker builder prune -f
+```
+
+使用 docker system prune -a 清理未使用的镜像和容器。 
+
+
+
+
+
+
+
+# 在使用 docker-compose up --build 构建并启动服务后，后续的启动和关闭可以通过以下命令来管理：
+
+## 启动和关闭服务的常用命令
+
+  
+首次启动 或需要重新构建时，使用 docker-compose up --build。
+    
+```
+docker-compose up --build
+```
+
+正常启动 ：不需要重新构建时，只需运行以下命令：
+
+```
+docker-compose up
+```
+
+这将启动所有服务。加上 -d 选项可以在后台运行（即不显示日志）。
+
+```
+docker-compose up -d
+```
+
+关闭服务 你可以使用 docker-compose down 来停止并关闭所有容器：
+
+```
+docker-compose down
+```
+
+该命令会停止运行的容器，并清除与它们关联的网络。容器、网络、卷都会被移除。
+
+停止服务 如果只想 停止服务 而不移除容器、网络等，可以使用：
+ 
+```
+docker-compose stop
+```
+
+这会停止所有正在运行的容器，但保留容器和网络的状态，以便以后可以快速重新启动。
+
+重新启动服务 如果需要重新启动服务，可以运行以下命令：
+
+```
+docker-compose restart
+```
+
+如果需要仅重启某个服务，指定服务名称即可：
+
+```
+docker-compose restart <service_name>
+```
+
+## 启动和关闭总结
+
+```
+    启动服务 ：
+        前台运行并构建： docker-compose up --build
+        后台运行： docker-compose up -d
+
+    关闭服务 ：
+        完全关闭并清理： docker-compose down
+        停止但不清理容器： docker-compose stop
+
+    重新启动 ：
+        重启所有服务： docker-compose restart
+        重启特定服务： docker-compose restart <service_name>
+```
+
+通过这些命令，你可以灵活管理容器的启动、停止和重启。 
