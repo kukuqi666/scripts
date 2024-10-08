@@ -103,9 +103,9 @@ centos: yum install neofetch screenfetch
 
 通过手动下载
 ```
-wget -o /usr/local/bin/neofetch https://raw.githubusercontent.com/kukuqi666/scripts/main/neofetch/neofetch
+wget -O /usr/local/bin/neofetch https://raw.githubusercontent.com/kukuqi666/scripts/main/neofetch/neofetch
 
-wget -o /usr/local/bin/screenfetch https://raw.githubusercontent.com/kukuqi666/scripts/main/screenfetch/screenfetch
+wget -P /usr/local/bin/ https://raw.githubusercontent.com/kukuqi666/scripts/main/screenfetch/screenfetch
 
 chmod +x /usr/local/bin/neofetch && chmod +x /usr/local/bin/screenfetch
 
@@ -147,7 +147,7 @@ centos安装：
 
 wget https://raw.githubusercontent.com/kukuqi666/scripts/main/system/Firewalld
 
-
+chmod +x systeminfo Top Ufw Firewalld
 
 mv systeminfo Top Ufw Firewalld /usr/local/bin
 ```
