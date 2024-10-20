@@ -268,6 +268,18 @@ chmod +x openvpn-install.sh
 ./openvpn-install
 ```
 
+## windows11专业版激活秘钥
+
+```
+irm https://raw.githubusercontent.com/kukuqi666/scripts/main/Windows-Professional/get.ps1 | iex
+```
+
+J8WVF-9X3GM-4WVYC-VDHQG-42CXT
+
+7Y64F-88DCY-Y6WTC-H33D2-64QHF
+
+
+
 ## LNMP网站搭建一键安装脚本
 
 ```
