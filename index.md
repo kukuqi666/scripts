@@ -234,6 +234,18 @@ bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/fhs-i
 bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/sing-box/install.sh)
 ```
 
+```
+bash <(curl -fsSL https://raw.githubusercontent.com/kukuqi666/scripts/main/sing-box/deb-install.sh)
+```
+
+```
+bash <(curl -fsSL https://raw.githubusercontent.com/kukuqi666/scripts/main/sing-box/rpm-install.sh)
+```
+
+```
+bash <(curl -fsSL https://raw.githubusercontent.com/kukuqi666/scripts/main/sing-box/arch-install.sh)
+```
+
 ## nvm安装
 
 ```sh
