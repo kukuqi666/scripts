@@ -9,7 +9,7 @@
 ### 安装基本工具
 ```bash {title=&#34;安装基本工具&#34;}
 # 更新软件源
-sudo apt update &amp;&amp; sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 # 安装 zsh git curl
 sudo apt install zsh git curl -y
 ```
@@ -24,11 +24,11 @@ chsh -s /bin/zsh
 
 | Method | Command |
 | :--- | :--- |
-| **curl** | `sh -c &#34;$(curl -fsSL https://install.ohmyz.sh/)&#34;` |
-| **wget** | `sh -c &#34;$(wget -O- https://install.ohmyz.sh/)&#34;` |
-| **fetch** | `sh -c &#34;$(fetch -o - https://install.ohmyz.sh/)&#34;` |
-| 国内curl[镜像](https://gitee.com/pocmon/ohmyzsh) | `sh -c &#34;$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)&#34;` |
-| 国内wget[镜像](https://gitee.com/pocmon/ohmyzsh) | `sh -c &#34;$(wget -O- https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)&#34;` |
+| **curl** | `sh -c "$(curl -fsSL https://install.ohmyz.sh/)"` |
+| **wget** | `sh -c "$(wget -O- https://install.ohmyz.sh/)"` |
+| **fetch** | `sh -c "$(fetch -o - https://install.ohmyz.sh/)"` |
+| 国内curl[镜像](https://gitee.com/pocmon/ohmyzsh) | `sh -c "$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)"` |
+| 国内wget[镜像](https://gitee.com/pocmon/ohmyzsh) | `sh -c &#34;$(wget -O- https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)"` |
 
 注意：同意使用 Oh-my-zsh 的配置模板覆盖已有的 `.zshrc`。
 
@@ -44,7 +44,7 @@ sudo wget -O $ZSH_CUSTOM/themes/haoomz.zsh-theme https://cdn.haoyep.com/gh/leegi
 ```bash
 nano ~/.zshrc
 
-ZSH_THEME=&#34;haoomz&#34;
+ZSH_THEME="haoomz"
 
 source ~/.zshrc
 ```
@@ -58,7 +58,7 @@ source ~/.zshrc
 ### 推荐主题
 你可以在[内置主题样式截图](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)中查看所有 zsh 内置的主题样式和对应的主题名。这些内置主题已经放在 ～/.oh-my-zsh/themes 目录下，不需要再下载。
 ```bash
-cd ~/.oh-my-zsh/themes &amp;&amp; ls
+cd ~/.oh-my-zsh/themes && ls
 ```
 
 ![zsh 内置的主题样式](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012242407.png)
@@ -129,7 +129,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search)
 当你配置好登陆用户的 zsh 后，如果使用`sudo su`命令进入`root`用户的终端，发现还是默认的`bash`。建议在`root`用户的终端下，也安装`on my zsh`，设置与普通用户不同的主题以便区分，插件可以使用一样的。
 `root`用户的`~/.zshrc`配置，仅供参考：
 ```bash
-ZSH_THEME=&#34;ys&#34;
+ZSH_THEME="ys"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search)
 # 或
 plugins=(git colored-man-pages colorize cp man command-not-found sudo suse ubuntu archlinux zsh-navigation-tools z extract history-substring-search python zsh-autosuggestions zsh-syntax-highlighting)
