@@ -160,9 +160,7 @@ mv systeminfo Top Ufw Firewalld /usr/local/bin
 
 **linux安装**
 ```
-bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/filebrowser/install.sh)
-
-curl -fsSL https://raw.githubusercontent.com/kukuqi666/scripts/main/filebrowser/get.sh | bash
+curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
 ```
 
 **windows安装**
