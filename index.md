@@ -309,7 +309,11 @@ Debian   兼容系统版本：Debian 10 11  12
 sudo wget -O install.sh https://raw.githubusercontent.com/kukuqi666/scripts/main/phpStudy/install.sh && sudo bash install.sh
 ```
 
+windows：直接复制在浏览器打开下载
 
+```
+https://github.com/kukuqi666/scripts/releases/download/v8.1.1.3/phpstudy_x64_8.1.1.3.exe
+```
 
 
 
