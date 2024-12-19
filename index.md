@@ -289,6 +289,29 @@ J8WVF-9X3GM-4WVYC-VDHQG-42CXT
 7Y64F-88DCY-Y6WTC-H33D2-64QHF
 
 
+## phpStudy
+
+Centos 兼容系统版本：CentOS 7.6  7.X  8.X   银河麒麟（Server-V10-SP3-X86）  统信UOS（Server-20-amd64）
+
+```
+sudo curl -O https://raw.githubusercontent.com/kukuqi666/scripts/main/phpStudy/install.sh && sudo bash install.sh
+```
+
+Ubuntu  兼容系统版本：Ubuntu 18.04 20.04 22.04 24.04
+
+```
+sudo wget -O install.sh https://raw.githubusercontent.com/kukuqi666/scripts/main/phpStudy/install.sh && sudo bash install.sh
+```
+
+Debian   兼容系统版本：Debian 10 11  12
+
+```
+sudo wget -O install.sh https://raw.githubusercontent.com/kukuqi666/scripts/main/phpStudy/install.sh && sudo bash install.sh
+```
+
+
+
+
 
 ## LNMP网站搭建一键安装脚本
 
