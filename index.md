@@ -187,6 +187,14 @@ sudo curl -L "https://github.com/docker/compose/releases/download/2.29.7/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 docker-compose --version
+
+```
+
+ollama安装
+```
+curl -fsSL https://ollama.com/install.sh | sh
+
+curl -fsSL https://raw.githubusercontent.com/kukuqi666/scripts/main/ollama/install.sh | sh
 ```
 
 ## caddy安装
