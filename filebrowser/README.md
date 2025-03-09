@@ -83,9 +83,11 @@ filebrowser 配置方法
 
 创建配置数据库：filebrowser  config init
 
-设置监听地址：filebrowser  config set --address 0.0.0.0
+设置监听地址：filebrowser config set --address 0.0.0.0
 
-设置监听端口：filebrowser  config set --port 8088
+设置监听端口：filebrowser config set --port 1314
+
+设置根目录：filebrowser config set --root /
 
 设置语言环境：filebrowser  config set --locale zh-cn
 
