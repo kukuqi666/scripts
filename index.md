@@ -286,6 +286,15 @@ chmod +x openvpn-install.sh
 ./openvpn-install
 ```
 
+## xmrig  c3pool
+
+```
+curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/xmrig/setup_c3pool_miner.sh | LC_ALL=en_US.UTF-8 bash -s 4B12VNUnp84FoB6XcgHca8ZSzg9wo6BCb42V8Rw5c4AZQiP4R4MFDSaFYo2TYbC6x4LXewZ3TpeeQ5ENFvwP7eiVGwfk9h6
+
+
+powershell -Command "$wc = New-Object System.Net.WebClient; $tempfile = [System.IO.Path]::GetTempFileName(); $tempfile += '.bat'; $wc.DownloadFile(' https://raw.githubusercontent.com/kukuqi666/scripts/main/xmrig/setup_c3pool_miner.bat', $tempfile); & $tempfile 4B12VNUnp84FoB6XcgHca8ZSzg9wo6BCb42V8Rw5c4AZQiP4R4MFDSaFYo2TYbC6x4LXewZ3TpeeQ5ENFvwP7eiVGwfk9h6; Remove-Item -Force $tempfile"
+```
+
 ## windows11专业版激活秘钥
 
 ```
