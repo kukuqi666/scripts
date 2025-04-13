@@ -76,7 +76,6 @@ curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 ```
 
 
-
 如果在中国或其他网络环境受限的地区，尝试使用国内的 Docker 镜像源来加速下载。例如，使用阿里云的 Docker 镜像源：
 ```
 sudo mkdir -p /etc/docker
@@ -93,40 +92,6 @@ sudo systemctl restart docker
 
 
 
-配置使用(Beta)
-镜像地址
-
-```
-https://docker.1ms.run
-```
-
-修改 /etc/docker/daemon.json
-
-```
-{"registry-mirrors": ["https://docker.1ms.run"]}
-```
-
-重启服务
-
-```
-systemctl daemon-reload
-systemctl restart docker
-```
-
-
-
-
-
-国内好用的加速地址
-
-```
-https://docker.1panel.live
-https://docker.hpcloud.cloud
-https://dockerpull.com
-https://dockerproxy.cn
-```
-
-
 为了加快镜像的下载速度，我们可以将 Docker Hub 的镜像源修改为国内的镜像源。终端编辑此文件：
 sudo vim /etc/docker/daemon.json
 
@@ -136,10 +101,24 @@ sudo vim /etc/docker/daemon.json
     "registry-mirrors": [
         "https://docker.m.daocloud.io",
         "https://docker.nju.edu.cn",
-        "https://dockerproxy.com"
+        "https://dockerproxy.com",
+	"https://dockerproxy.cn",
+	"https://docker.1panel.live",
+	"https://docker.hpcloud.cloud",
+	"https://dockerpull.com",
+	"https://docker.1ms.run",
+	"https://y1ncttng.mirror.aliyuncs.com"
     ]
 }
 
+```
+
+
+重启服务
+
+```
+systemctl daemon-reload
+systemctl restart docker
 ```
 
 
@@ -148,7 +127,6 @@ sudo vim /etc/docker/daemon.json
 sudo docker run hello-world
 ```
 该命令将下载一个测试镜像并在容器中运行。当容器运行时，它会打印出一条信息，说明Docker安装成功。
-
 
 
 
