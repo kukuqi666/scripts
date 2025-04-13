@@ -179,39 +179,66 @@ bash <(curl -s -L https://raw.githubusercontent.com/kukuqi666/scripts/main/docke
 参考说明[文档](docker/README.md)
 
 
+
+Debian/Ubuntu从软件源一键安装
+安装Docker
 ```
-sudo wget -qO- https://get.docker.com/ | bash
+apt install -y docker.io  docker-compose
 ```
 
-或者
+自启动Docker
 ```
-curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
-```
-
-安装成功执行下面语句，如果有类似回显，说明安装成功
-
-```
-$ docker --version
-Docker version 18.06.1-ce, build e68fc7a
+systemctl enable --now docker
 ```
 
-Ubuntu 16.04+、Debian 8+、CentOS 7
-国内从 Docker Hub 拉取镜像有时会遇到困难，此时可以配置镜像加速器。国内很多云服务商都提供了国内加速器服务，例如：
+Docker官方一键安装脚本
+使用官方源安装（国内直接访问较慢）
 ```
-网易云加速器 https://hub-mirror.c.163.com
-百度云加速器 https://mirror.baidubce.com
+curl -fsSL https://get.docker.com | bash
 ```
+
+使用阿里源安装
+```
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+```
+
+使用中国区Azure源安装
+```
+curl -fsSL https://get.docker.com | bash -s docker --mirror AzureChinaCloud
+```
+
+自启动Docker
+```
+systemctl enable --now docker
+```
+
+一键安装最新版Docker Compose：
+```
+COMPOSE_VERSION=`git ls-remote https://github.com/docker/compose | grep refs/tags | grep -oP "[0-9]+\.[0-9][0-9]+\.[0-9]+$" | sort --version-sort | tail -n 1`
+sh -c "curl -L https://github.com/docker/compose/releases/download/v${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose"
+chmod +x /usr/local/bin/docker-compose
+```
+
+配置国内镜像源
 由于镜像服务可能出现宕机，建议同时配置多个镜像。
 本节我们以 网易云 镜像服务 https://hub-mirror.c.163.com 为例进行介绍。
 对于使用 systemd 的系统，请在 /etc/docker/daemon.json 中写入如下内容（如果文件不存在请新建该文件）
+
 ```
+mkdir -p /etc/docker
+tee /etc/docker/daemon.json <<-'EOF'
 {
   "registry-mirrors": [
+    "https://dockerproxy.com",
+    "https://docker.m.daocloud.io",
+    "https://ypzju6vq.mirror.aliyuncs.com",
     "https://hub-mirror.c.163.com",
     "https://mirror.baidubce.com"
   ]
 }
+EOF
 ```
+
 之后重新启动服务。
 ```
 sudo systemctl daemon-reload
