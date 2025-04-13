@@ -173,48 +173,6 @@ iwr -useb https://raw.githubusercontent.com/kukuqi666/scripts/main/filebrowser/g
 
 
 
-
-## Ubuntu 安装 Anaconda3
-
-1.从清华大学开源软件镜像站下载最新版本的 Anaconda3并安装
-```
-wget -c 'https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh' -P ~/Downloads
-
-chmod +x Anaconda3-2023.09-0-Linux-x86_64.sh
-
-./Anaconda3-2023.09-0-Linux-x86_64.sh
-```
-
-2.阅读并接受安装协议：按 Enter 键阅读协议，直到出现 Do you accept the license terms? [yes|no]，输入 yes 并继续
-确认安装位置：按 Enter 键选择默认安装目录。 初始化 Anaconda：根据提示输入 yes 完成初始化。
-配置环境变量  如果安装后提示 conda: 未找到命令，需要将 Anaconda 的路径添加到 .bashrc或.zshrc 文件中
-
-```
-echo 'export PATH="/root/anaconda3/bin:$PATH"' >> ~/.zshrc
-source ~/.zshrc
-```
-
-验证安装
-
-重新打开终端，执行以下命令验证安装是否成功：
-conda -V
-python -V
-
-常用命令
-
-    查看 conda 版本： conda --version
-
-    更新 conda： conda update conda
-
-    新建虚拟环境： conda create --name myenv python=3.8
-
-    激活虚拟环境： conda activate myenv
-
-    退出虚拟环境： conda deactivate 
-
-
-
-
 ## Ubuntu 安装 Anaconda3
 
 1.从清华大学开源软件镜像站下载最新版本的 Anaconda3并安装
