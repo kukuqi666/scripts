@@ -271,13 +271,20 @@ chmod +x /usr/local/bin/docker-compose
 mkdir -p /etc/docker
 tee /etc/docker/daemon.json <<-'EOF'
 {
-  "registry-mirrors": [
-    "https://dockerproxy.com",
-    "https://docker.m.daocloud.io",
-    "https://ypzju6vq.mirror.aliyuncs.com",
-    "https://hub-mirror.c.163.com",
-    "https://mirror.baidubce.com"
-  ]
+    "registry-mirrors": [
+        "https://docker.m.daocloud.io",
+        "https://docker.nju.edu.cn",
+        "https://dockerproxy.com",
+        "https://dockerproxy.cn",
+        "https://docker.1panel.live",
+        "https://docker.hpcloud.cloud",
+        "https://dockerpull.com",
+        "https://docker.1ms.run",
+        "https://y1ncttng.mirror.aliyuncs.com",
+        "https://ypzju6vq.mirror.aliyuncs.com",
+        "https://hub-mirror.c.163.com",
+        "https://mirror.baidubce.com"
+    ]
 }
 EOF
 ```
