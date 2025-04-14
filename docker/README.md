@@ -102,12 +102,15 @@ sudo vim /etc/docker/daemon.json
         "https://docker.m.daocloud.io",
         "https://docker.nju.edu.cn",
         "https://dockerproxy.com",
-	"https://dockerproxy.cn",
-	"https://docker.1panel.live",
-	"https://docker.hpcloud.cloud",
-	"https://dockerpull.com",
-	"https://docker.1ms.run",
-	"https://y1ncttng.mirror.aliyuncs.com"
+        "https://dockerproxy.cn",
+        "https://docker.1panel.live",
+        "https://docker.hpcloud.cloud",
+        "https://dockerpull.com",
+        "https://docker.1ms.run",
+        "https://y1ncttng.mirror.aliyuncs.com",
+        "https://ypzju6vq.mirror.aliyuncs.com",
+        "https://hub-mirror.c.163.com",
+        "https://mirror.baidubce.com"
     ]
 }
 
