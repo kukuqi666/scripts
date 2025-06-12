@@ -424,6 +424,20 @@ J8WVF-9X3GM-4WVYC-VDHQG-42CXT
 7Y64F-88DCY-Y6WTC-H33D2-64QHF
 
 
+## 一键激活JetBrains全家桶方式
+
+```
+Windows：irm https://raw.githubusercontent.com/kukuqi666/scripts/main/ckeyrun/ckeyrun.ps1|iex
+
+Linux：wget --no-check-certificate https://raw.githubusercontent.com/kukuqi666/scripts/main/ckeyrun/ckeyrun.sh -O ckey.run && bash ckey.run
+
+Mac：curl -L -o ckey.run https://raw.githubusercontent.com/kukuqi666/scripts/main/ckeyrun/ckeyrun.sh && bash ckey.run
+```
+
+
+
+
+
 ## phpStudy
 
 Centos 兼容系统版本：CentOS 7.6  7.X  8.X   银河麒麟（Server-V10-SP3-X86）  统信UOS（Server-20-amd64）
