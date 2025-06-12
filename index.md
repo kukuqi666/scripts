@@ -429,11 +429,10 @@ J8WVF-9X3GM-4WVYC-VDHQG-42CXT
 ```
 Windows：irm https://raw.githubusercontent.com/kukuqi666/scripts/main/ckeyrun/ckeyrun.ps1|iex
 
-Linux：wget --no-check-certificate https://raw.githubusercontent.com/kukuqi666/scripts/main/ckeyrun/ckeyrun.sh -O ckey.run && bash ckey.run
+Linux：wget --no-check-certificate https://raw.githubusercontent.com/kukuqi666/scripts/main/ckeyrun/ckeyrun.sh -O ckeyrun.sh && bash ckeyrun.sh
 
-Mac：curl -L -o ckey.run https://raw.githubusercontent.com/kukuqi666/scripts/main/ckeyrun/ckeyrun.sh && bash ckey.run
+Mac：curl -L -o ckeyrun.sh https://raw.githubusercontent.com/kukuqi666/scripts/main/ckeyrun/ckeyrun.sh && bash ckeyrun.sh
 ```
-
 
 
 
