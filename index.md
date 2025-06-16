@@ -308,7 +308,7 @@ docker-compose --version
 
 ```
 
-cpolar安装
+## cpolar安装
 ```
 curl -L https://www.cpolar.com/static/downloads/install-release-cpolar.sh | sudo bash
 或
@@ -316,10 +316,10 @@ curl -L https://raw.githubusercontent.com/kukuqi666/scripts/main/cpolar/cpolar.s
 ```
 
 
-ollama安装
+## ollama安装
 ```
 curl -fsSL https://ollama.com/install.sh | sh
-
+或
 curl -fsSL https://raw.githubusercontent.com/kukuqi666/scripts/main/ollama/install.sh | sh
 ```
 参考说明[文档](cpolar/README.md)
