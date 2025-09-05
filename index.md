@@ -171,6 +171,11 @@ iwr -useb https://raw.githubusercontent.com/kukuqi666/scripts/main/filebrowser/g
 参考说明[文档](filebrowser/README.md)
 
 
+## ubuntu换一键国内源
+
+```
+bash <(curl -sSL https://raw.githubusercontent.com/kukuqi666/scripts/main/Ubuntu 换源/ChangeMirrors.sh)
+
 
 
 ## Ubuntu 安装 Anaconda3
