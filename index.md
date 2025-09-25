@@ -581,6 +581,16 @@ kill -9 26993
 ```
 ## 利用包管理工具安装好玩的工具
 
+```
+cowsay -l
+
+cowsay -f  dragon "hello word" | lolcat
+
+fortune | cowsay -f  dragon  | lolcat
+
+sl | lolcat
+```
+
 ![sl](images/sl.png)
 
 ![cmatrix](images/cmatrix.png)
