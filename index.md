@@ -171,6 +171,13 @@ iwr -useb https://raw.githubusercontent.com/kukuqi666/scripts/main/filebrowser/g
 参考说明[文档](filebrowser/README.md)
 
 
+## Linux换源（CentOS7为例）
+```
+bash <(curl -sSL https://raw.githubusercontent.com/kukuqi666/scripts/main/linuxmirrors/main.sh) --source aliyun
+
+yum clean all && yum makecache
+```
+
 ## ubuntu换一键国内源
 
 ```
